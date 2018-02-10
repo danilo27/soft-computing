@@ -8,6 +8,7 @@ from keras.models import load_model
 import math
 import matplotlib.pyplot as plt
 from scipy.optimize import fsolve
+import sys
 
 global konacni_rezultat
 epsilon = 1e-12
