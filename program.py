@@ -580,18 +580,31 @@ def obradi_video(video,f):
     cv2.destroyAllWindows()
 
 def main():
-    f = open('out_new.txt', 'w')
-    f.write('RA 111/2014 Danilo Bujisa\n')
-    f.write('file	sum\n')
-    videos = ['video-0.avi', 'video-1.avi', 'video-2.avi', 'video-3.avi', 'video-4.avi', 'video-5.avi', 'video-6.avi',
-         'video-7.avi', 'video-8.avi', 'video-9.avi']
-    # videos = ['video-0.avi']
-    for video in videos:
-        obradi_video(video,f)
+    if len(sys.argv) == 1:
 
-    f.close()
+        f = open('out_new.txt', 'w')
+        f.write('RA 111/2014 Danilo Bujisa\n')
+        f.write('file	sum\n')
+        videos = ['video-0.avi', 'video-1.avi', 'video-2.avi', 'video-3.avi', 'video-4.avi', 'video-5.avi', 'video-6.avi',
+             'video-7.avi', 'video-8.avi', 'video-9.avi']
+        # videos = ['video-0.avi']
+        for video in videos:
+            obradi_video(video,f)
 
-    print 'Done'
+        f.close()
+
+        print 'Done'
+    elif sys.argv[1] >=0 or sys.argv[1]<=9:
+        vid = 'video-' + str(sys.argv[1]) +'.avi'
+        f = open('out_new.txt', 'w')
+        f.write('RA 111/2014 Danilo Bujisa\n')
+        f.write('file	sum\n')
+
+        obradi_video(vid, f)
+
+        f.close()
+
+        print 'Done'
 
 if __name__ == '__main__':
     main()
